@@ -1,0 +1,14 @@
+Title: Gift Registry
+Group: Kevin Whalen, Kyle Meehan, Vidmantas Steponavicius
+
+Description:
+	The Gift Registry is meant to be a store independent way of simplifying gift 
+	giving and receiving. The main advantage of having a personal registry like 
+	this is being able to add items any time or place via (possibly an Android App
+	or) the internet. 
+	It also makes gift giving a less complicated process. Friends do not have to go
+	to any specific store and do not have to fabric gift ideas on their own.
+	(They can also (possibly) contribute the purchase of an expensive gift.)
+
+Example: 
+	A user creates an event such as their birthday. The user then adds items they would like to receive and invites people to the event. Those users who were invited will confirm that they are coming and check off items from the gift list they have purchased. 
