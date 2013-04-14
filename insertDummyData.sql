@@ -9,7 +9,7 @@ insert into Guests_List values ('00003', '00001', '00001', 0, 1);
 insert into Guests_List values ('00004', '00001', '00001', 1, 1);
 insert into Guests_List values ('00005', '00001', '00001', 1, 0);
 
-insert into Events values ('00001', '00001', 'Bill's Birthday', '2013-04-21', '00001');
+insert into Events values ('00001', '00001', 'Bill Birthday', '2013-04-21', '00001');
 
 insert into Gift values ('00001', 00001, '00002', 1); 
 insert into Gift values ('00002', 00001, '00002', 4);
@@ -26,7 +26,7 @@ insert into Contact_Info values (00001, 00001, '440-568-9124', 'bill10@cox.net')
 insert into Contact_Info values (00002, 00002, '440-569-8742', 'laverne@cox.net');
 insert into Contact_Info values (00003, 00003, '440-578-9612', 'hi1234@yahoo.com');
 insert into Contact_Info values (00004, 00004, '216-852-9461', 'ti@cox.net');
-insert into Contact_Info values (00005, 00005, '216-963-4561', 'I'mlovingit@yahoo.com');
+insert into Contact_Info values (00005, 00005, '216-963-4561', 'Imlovingit@yahoo.com');
 
 insert into Address values (00001, 'Home', 'Cleveland', '26993', 'Glenside', 'Brunswick Circle', 'Ohio');
 insert into Address values (00002, 'Home', 'Cleveland', '26973', 'Glenside', 'Brunswick Circle', 'Ohio');

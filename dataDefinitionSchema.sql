@@ -17,10 +17,10 @@ create table Guest_List
 	Event_ID	varchar(15) not null,
 	Coming 		tinyint(1),
 	Gifting		tinyint(1),
-	primary key (Giver_ID, Reciever_ID, Event_ID),
-	foreign key (Giver_ID) references Person (User_Name)
+	primary key (Giver_ID, Receiver_ID, Event_ID),
+	foreign key (Giver_ID) references Person (User_ID)
 		on delete cascade,
-	foreign key (Receiver_ID) references Person (User_Name)
+	foreign key (Receiver_ID) references Person (User_ID)
 		on delete cascade,
 	foreign key (Event_ID) references Events
 		on delete cascade
