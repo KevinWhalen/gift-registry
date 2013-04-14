@@ -5,7 +5,7 @@ create table Person
 	F_Name		varchar(15),
 	L_Name		varchar(15),
 	M_Name		varchar(15),
-	DOB		date,		
+	DOB		varchar(10),		
 	primary key (User_ID)
 	);
 
@@ -16,7 +16,11 @@ create table Guest_List
 	Event_ID	varchar(15),
 	Coming 		tinyint(1),
 	Gifting		tinyint(1),
-	primary key (Giver_ID, Reciever_ID, Event_ID)
+	primary key (Giver_ID, Reciever_ID, Event_ID),
+	foreign key (Giver_ID, Receiver_ID) references Person
+		on delete cascade,
+	foreign key (Event_ID) references Events
+		on delete cascade
 	);
 
 create table Gift
@@ -25,7 +29,13 @@ create table Gift
 	Event_ID	varchar(10),
 	Giver_ID	varchar(10),
 	Quantity 	numeric(3, 0),
-	primary key (Item_ID, Event_ID)
+	primary key (Item_ID, Event_ID),
+	foreign key (Item_ID) references Item
+		on delete cascade,
+	foreign key (Event_ID) references Events
+		on delete cascade,
+	foreign key (Giver_ID) references Guests_List 
+		on delete cascade 
 	);
 
 create table Item
@@ -43,7 +53,11 @@ create table Contact_Info
 	Location_ID	varchar(10),
 	Phone_Num	varchar(10),
 	Email		varchar(10),
-	primary key (User_ID)
+	primary key (User_ID),
+	foreign key (User_ID, Location_ID) references Address
+		on delete cascade,
+	foreign key (User_ID) references Person
+		on delete cascade
 	);
 
 create table Address
@@ -64,7 +78,11 @@ create table Events
 	Event_ID	varchar(10),
 	User_ID		varchar(10),
 	Event_Name	varchar(10),
-	Date		
+	Date		varchar(10),		
 	Location_ID	varchar(10),
-	primary key (Event_ID)
+	primary key (Event_ID),
+	foreign key (User_ID) references Person,
+		on delete cascade,
+	foreign key (Location_ID) references Address
+		on delete cascade
 	); 
