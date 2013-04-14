@@ -65,20 +65,19 @@ create table Contact_Info
 
 create table Address
 	(
-	Location_ID	varchar(10) not null,
+	Location_ID	varchar(10) not null AUTO_INCREMENT,
 	Location_Name	varchar(10),
 	City		varchar(10),
 	Street_Name	varchar(15),
 	Street_Number	numeric(5, 0),
 	Street_Ext	varchar(10),
 	State		varchar(10),
-	Country		varchar(20),
 	primary key (Location_ID)
 	);
 
 create table Events
 	(
-	Event_ID	varchar(10) not null,
+	Event_ID	varchar(10) not null AUTO_INCREMENT,
 	User_ID		varchar(10),
 	Event_Name	varchar(10),
 	Date		varchar(10),		
