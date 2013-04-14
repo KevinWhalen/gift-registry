@@ -1,19 +1,20 @@
 create table Person
 	(
+	User_ID		int not null AUTO_INCREMENT,
 	User_Name	varchar(15),
 	User_Password	varchar(20),
 	F_Name		varchar(15),
 	L_Name		varchar(15),
 	M_Name		varchar(15),
 	DOB		varchar(10),		
-	primary key (User_ID)
+	primary key (User_ID) 
 	);
 
 create table Guest_List
 	(
-	Giver_ID	varchar(15),
-	Receiver_ID	varchar(15),
-	Event_ID	varchar(15),
+	Giver_ID	varchar(15) not null,
+	Receiver_ID	varchar(15) not null,
+	Event_ID	varchar(15) not null,
 	Coming 		tinyint(1),
 	Gifting		tinyint(1),
 	primary key (Giver_ID, Reciever_ID, Event_ID),
@@ -27,8 +28,8 @@ create table Guest_List
 
 create table Gift
 	(
-	Item_ID		varchar(10),
-	Event_ID	varchar(10),
+	Item_ID		varchar(10) not null,
+	Event_ID	varchar(10) not null,
 	Giver_ID	varchar(10),
 	Quantity 	numeric(3, 0),
 	primary key (Item_ID, Event_ID),
@@ -42,7 +43,7 @@ create table Gift
 
 create table Item
 	(
-	Item_ID		varchar(10),
+	Item_ID		varchar(10) not null,
 	Department	varchar(15),
 	Title		varchar(10),
 	Price 		numeric(4, 2),
@@ -51,7 +52,7 @@ create table Item
 
 create table Contact_Info
 	(
-	User_ID		varchar(10),
+	User_ID		varchar(10) not null,
 	Location_ID	varchar(10),
 	Phone_Num	varchar(10),
 	Email		varchar(10),
@@ -64,7 +65,7 @@ create table Contact_Info
 
 create table Address
 	(
-	Location_ID	varchar(10),
+	Location_ID	varchar(10) not null,
 	Location_Name	varchar(10),
 	City		varchar(10),
 	Street_Name	varchar(15),
@@ -77,7 +78,7 @@ create table Address
 
 create table Events
 	(
-	Event_ID	varchar(10),
+	Event_ID	varchar(10) not null,
 	User_ID		varchar(10),
 	Event_Name	varchar(10),
 	Date		varchar(10),		
