@@ -1,9 +1,9 @@
 <?php
 $sqldb = "mysql";
 $dbhost = "dbdev.cs.kent.edu";
-$dbname = "vstepona";
-$dbuser = "vstepona";
-$dbpass = "gift-registry";
+$dbname = "kwhalen";
+$dbuser = "kwhalen";
+$dbpass = "810161389";
 
 // parameters
 if($_POST['category']){

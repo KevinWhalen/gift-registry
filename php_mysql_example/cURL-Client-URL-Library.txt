@@ -1,0 +1,37 @@
+http://mobile.tutsplus.com/tutorials/mobile-web-apps/use-jquery-mobile-to-build-a-native-android-news-reader-app-part-2/
+
+
+var NEWS_URI = 'bridge.php?fwd=http://rss.news.yahoo.com/rss/';  
+
+function getNews(varCat,handler)
+{
+	var varURI = NEWS_URI + varCat;  
+	$.ajax({type: GET, dataType: XML, url: varURI, success: handler});  
+	return false;  
+}
+
+<?php  
+	header('Content-Type: application/xml');  
+	$tmpFile = 'tmpFile.txt';  
+	$val = $_GET["fwd"];  
+	$curlHandle = curl_init($val);  
+	$filePointer = fopen($tmpFile, "w");  
+	curl_setopt($curlHandle, CURLOPT_FILE, $filePointer);  
+	curl_exec($curlHandle);  
+	curl_close($curlHandle);  
+	fclose($filePointer);  
+	$linesArr = file($tmpFile);  
+	foreach($linesArr as $eachLine){  
+		echo($eachLine);  
+	}
+?> 
+
+
+Implementation is based on cURL (Client URL Library). The variable val stores the value of the fwd parameter, which is the actual news URL.
+
+	We initialize cURL via curl_init() and open a temporary file named tmpFile.txt via the fopen().
+	We then instruct cURL to write its output to that file, via curl_setopt($curlHandle, CURLOPT_FILE, $filePointer).
+	The next steps consist of performing the HTTP call via curl_exec() and closing the cURL session via curl_close(). At this point, the response from the cURL session is already written into the temporary file. Hence, we close the file via fclose().
+	We then read the file into an array via $linesArr = file($tmpFile) where each line is in a separate entry of the array. Then, in the foreach() loop we iterate through the array and send the response back.
+
+In a production application, rather than writing the response into a temporary file, you would store it in memory for better performance and to avoid multiple threads trying to write into the same temporary file. Writing into a file is advantageous in terms of debugging. This way, you always have a written copy of the temporary file if you need to inspect its details. Note that the temporary file is written into the same file system folder as bridge.php and your web server must be configured to allow php files to write into the file system.
