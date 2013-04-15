@@ -3,7 +3,7 @@ $sqldb = "mysql";
 $dbhost = "dbdev.cs.kent.edu";
 $dbname = "kwhalen";
 $dbuser = "kwhalen";
-$dbpass = "810161389";
+$dbpass = "password";
 
 // grab parameters sent from front end
 //$title = $_GET['']; // or $_POST['']

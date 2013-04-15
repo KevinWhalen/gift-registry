@@ -3,7 +3,7 @@ $sqldb = "mysql";
 $dbhost = "dbdev.cs.kent.edu";
 $dbname = "kwhalen";
 $dbuser = "kwhalen";
-$dbpass = "810161389";
+$dbpass = "password";
 
 // parameters
 if($_POST['category']){
