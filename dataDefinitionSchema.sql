@@ -46,7 +46,7 @@ create table Item
 	Item_ID		varchar(20) not null, /* upc */
 	Department	varchar(25), /* assigned department */
 	Title		varchar(150), /* RPC 'description' */
-	Quantity	varchar(25), /* RPC 'size' (further details) */
+	Classification	varchar(25), /* RPC 'size' (further details) */
 	Price		numeric(8, 2),
 	primary key(Item_ID)
 	);
