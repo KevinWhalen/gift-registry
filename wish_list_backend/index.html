@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Redirect and close to give window a js handle</title>
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+	<script>
+try {
+
+    $(document).ready(function() {
+		console.log("hit index");
+		console.log("opener should be null here: " + window.opener);
+		window.locHandle = window.open("http://www.cs.kent.edu/~kwhalen/RPC/test/scanResultTest.php","locHandle");
+		console.log("redirected");
+    });
+
+} catch (error) {
+    console.error("Your javascript has an error: " + error);
+}
+	</script>
+</head>
+
+<body>
+<div>
+<p>
+page that opens the "add to wish list" page. <br />
+<a href="javascript: window.open('http://www.cs.kent.edu/~kwhalen/RPC/test/scanResultTest.php','locHandle')">click here if "add to" does not open</a><br />
+it has to be done as a pop-up to avoid extra pages left from opening the barcode scanner hook. only child pages can be closed.
+</p>
+</div>
+</body>
+</html>
+
+
