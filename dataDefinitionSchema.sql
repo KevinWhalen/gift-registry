@@ -43,9 +43,10 @@ create table Gift
 
 create table Item
 	(
-	Item_ID		varchar(20) not null,
-	Department	varchar(20),
-	Title		varchar(20),
+	Item_ID		varchar(20) not null, /* upc */
+	Department	varchar(20), /* assigned department */
+	Title		varchar(50), /* RPC 'description' */
+	Quantity	varchar(50), /* RPC 'size' (further details) */
 	Price 		numeric(8, 2),
 	primary key(Item_ID)
 	);
