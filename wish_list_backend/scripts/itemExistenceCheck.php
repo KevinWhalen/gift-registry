@@ -11,7 +11,8 @@ if($_POST['upc']){
 	$upc = $_GET['upc'];
 } else {
 	//$upc = "000000000000";
-	echo '{"Item_ID":"", "Department":"", "Title":"", "Classification":"", "Price":""}';
+	echo 'url error';
+//	echo '{"Item_ID":"", "Department":"", "Title":"", "Classification":"", "Price":""}';
 	die();
 }
 
@@ -47,6 +48,7 @@ $sth = $dbh->prepare($sql, Array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 			$out = preg_replace('/description/','desc',$output[0],1);
 			$entry = json_decode($out);
 			$u = escapeshellarg($entry->upc);
+		//	$d = escapeshellarg($entry->{'description'});
 			$d = escapeshellarg($entry->desc);
 			$s = escapeshellarg($entry->size);
 			exec("php addItem.php ".$u." ".$d." ".$s, $output2, $returnCode2);
@@ -54,6 +56,7 @@ $sth = $dbh->prepare($sql, Array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 			if ($returnCode2 == 0){
 				echo '{"Item_ID":"'.$entry->upc.'", ',
 					'"Department":"", ',
+				//	'"Title":"'.$entry->{'description'}.'", ',
 					'"Title":"'.$entry->desc.'", ',
 					'"Classification":"'.$entry->size.'", ',
 					'"Price":""',

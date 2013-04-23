@@ -8,10 +8,7 @@
 try {
 
     $(document).ready(function() {
-		console.log("hit index");
-		console.log("opener should be null here: " + window.opener);
 		window.locHandle = window.open("http://www.cs.kent.edu/~kwhalen/RPC/test/scanResultTest.php","locHandle");
-		console.log("redirected");
     });
 
 } catch (error) {
