@@ -8,7 +8,7 @@ create table Person
 	M_Name		varchar(15),
 	DOB		Date,		
 	primary key (User_ID) 
-	);
+	) ENGINE=InnoDB;
 
 create table Guests_List
 	(
@@ -24,13 +24,14 @@ create table Guests_List
 		on delete cascade,
 	foreign key (Event_ID) references Events
 		on delete cascade
-	);
+	) ENGINE=InnoDB;
 
 create table Gift
 	(
 	Item_ID		varchar(20) not null,
 	Event_ID	int not null,
 	Giver_ID	varchar(20),
+	Price		numeric(8, 2),
 	Quantity 	numeric(3, 0),
 	primary key (Item_ID, Event_ID),
 	foreign key (Item_ID) references Item
@@ -39,7 +40,7 @@ create table Gift
 		on delete cascade,
 	foreign key (Giver_ID) references Guests_List 
 		on delete cascade 
-	);
+	) ENGINE=InnoDB;
 
 create table Item
 	(
@@ -47,9 +48,8 @@ create table Item
 	Department	varchar(25), /* assigned department */
 	Title		varchar(150), /* RPC 'description' */
 	Classification	varchar(25), /* RPC 'size' (further details) */
-	Price		numeric(8, 2),
 	primary key(Item_ID)
-	);
+	) ENGINE=InnoDB;
 
 create table Contact_Info
 	(
@@ -62,7 +62,7 @@ create table Contact_Info
 		on delete cascade,
 	foreign key (User_ID) references Person
 		on delete cascade
-	);
+	) ENGINE=InnoDB;
 
 create table Address
 	(
@@ -74,7 +74,7 @@ create table Address
 	Street_Ext	varchar(20),
 	State		varchar(15),
 	primary key (Location_ID)
-	);
+	) ENGINE=InnoDB;
 
 create table Events
 	(
@@ -88,4 +88,4 @@ create table Events
 		on delete cascade,
 	foreign key (Location_ID) references Address
 		on delete cascade
-	); 
+	) ENGINE=InnoDB; 
