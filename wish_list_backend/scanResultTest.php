@@ -59,17 +59,23 @@ try {
 
 //-- merging functional aspects --//
 		if (UPC != ""){ // check database for item
-console.log(UPC);
+console.log("code: "+UPC);
 			inputField(""); //essentially $.empty()
 
 			$.getJSON("scripts/itemExistenceCheck.php?upc=" + UPC, 
 	//		$.getJSON("testResponse.php", // always gives 012000000850
 			function(data){
-				//$('#callScanner').click(function(){
-					//$("#inputUpc input").val(data.upc); // works when !async
-					inputField(data.Item_ID);
-					itemFields(data);
-				//});
+				if (data.Item_ID == ""){
+					$("#inputUpc").val(UPC);
+					$("#inputContainer").append('<hr /><p><span style="color:red">Sorry, the item code is not recognized.</span><br />(Often times this is because the item is new or is a store brand number and has not yet been catalogued.)</p>');
+				} else {
+console.log("Item_ID: "+data.Item_ID); console.log("Title: "+data.Title); console.log("Classification: "+data.Classification);
+					//$('#callScanner').click(function(){
+						//$("#inputUpc input").val(data.upc); // works when !async
+						inputField(data.Item_ID);
+						itemFields(data);
+					//});
+				}
 			});
 		}
 
