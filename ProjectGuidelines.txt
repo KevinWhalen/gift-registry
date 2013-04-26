@@ -1,0 +1,18 @@
+Project Guidelines and Grading Rubric
+
+    Introduction to project, including the intended users and reason they would use your database.  This portion should clearly describe what your project will allow the user to do.  This portion should probably be about 4-5 pages long. (15%)
+
+	ER diagram for your system. Documentation should include a diagram, a description of every entity, attribute, and relationship. Additionally, for each entity a primary key must be given and any foreign keys identified. Documentation should not exceed more than two pages. (25%)
+
+	Conversion of the ER diagram into a minimal set of relations. Documentation should not exceed more than one page. (10%)
+
+	A set of SQL table definitions including code for loading sample tables. Your documentation of this step should include a set of Create and Create index SQL statements. (5%)
+
+	Selection of appropriate primary and secondary indexes along with a statement/paragraph of justification for each. (5%)
+
+	Description of Web/Console/Terminal based user interface along with an outline of each screen. Documentation should not exceed more than 4-5 pages. You are to provide help screens and help pages to operate your database application. (20%)
+
+	Description of a set of programs that take data from your interface, prepare a SQL statement(s) and submit these statement(s) to SQL. After the execution of the program, the data obtained from SQL should be displayed on the screen. You should allow users to scroll through your data and to cancel the query during the execution or modify the data on the screen. Documentation for this stage consists of a short description of each program (or webpage) and a copy of the program source code.  (15%)
+
+	Finally, you should prepare a user manual (1-3 pages) that describes how to install your application, and how to use it. You should assume that you give a user a CD or a link to a downloadable  installation package that contains your application. User should be able to follow your instructions in installing your package. (5%)
+
