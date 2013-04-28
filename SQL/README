@@ -1,0 +1,11 @@
+Source SQL files in order:
+
+dataDefinitionSchema.sql
+setTableEngines.sql
+indexStatements.sql
+applyForeignKeys.sql
+
+
+Optional data for testing:
+insertDummyData.sql
+
