@@ -32,16 +32,24 @@
         </script>
     </head>
     <body>
+
+
         <!-- welcome page -->
         <div data-role="page" id="welcome_page">
-            <a href="home.html">
+
+        <!-- Header link to go to main page  -->
+          <div data-id="registry_header">
+            <a href="#welcome_page" class="ui-btn-active ui-state-persist">
                 <div data-theme="a" data-role="header">
                     <h3>
                         Gift-Registry
                     </h3>
                 </div>
             </a>
+          </div>
+            <!-- End of Header link to go to main page -->
     
+
              <div data-role="content">
                 <div>
                     <img src="gift.gif" alt="image" style="width: 100px; hight: 100px; position: relative; margin-left: -16px; margin-top: -18px" />
@@ -85,22 +93,47 @@
                 </a>
    
             <!-- Page  footer-->
-            <div data-theme="a" data-role="footer" data-position="fixed">
-               <div data-role="footer">     
+
+            <div data-id="registry_footer" data-theme="a" data-role="footer" data-position="fixed">
+
+
+              <!-- <div data-role="footer">     -->
                    <div data-role="navbar">
                      <ul>
-                         <li><a href="help.html">Help</a></li>
+                         <li><a href="#my_events">Help</a></li>
                          <li><a href="contact_us.html">Contact Us</a></li>
                          <li><a href="about_us.html.">About Us</a></li>
                      </ul>
                    </div><!-- End navbar -->
                </div>
             </div><!-- End page footer -->
-            
+
 
         </div> <!-- End of Log in part of page -->
 </div> <!-- welcome page -->
 
+
+<!-- my events list page -->
+    
+
+        <div data-role="page" id="my_events">
+
+            <div data-role="content">
+                <a data-role="button" href="#page1">
+                    Future events
+                </a>
+                <a data-role="button" href="#page1">    
+                    Events I am invited to
+                </a>
+                <a data-role="button" href="#page1">
+                    Past events
+                </a>
+                <a data-role="button" href="#page1">
+                    Create a new event
+                </a>
+            </div>
+            
+        </div><!-- End of my events list page -->
 
 
 
