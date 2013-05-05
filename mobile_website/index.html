@@ -52,8 +52,8 @@ try {
                    <div data-role="navbar">\
                      <ul>\
                          <li><a href="#help_page">Help</a></li>\
-                         <li><a href="#past_events">Contact Us</a></li>\
-                         <li><a href="#future_events">About Us</a></li>\
+                         <li><a href="#contact_us">Contact Us</a></li>\
+                         <li><a href="#about_us">About Us</a></li>\
                      </ul>\
                    </div><!-- End navbar -->\
                </div><!-- End page footer -->\
@@ -61,7 +61,7 @@ try {
 
 
         // Add headers and footers to pages
-        var pages=["#help_page", "#future_events", "#past_events", "#my_events", "#i_am_invited_to", "#future_events", "#user_reg", "#welcome_page"];
+        var pages=["#help_page", "#future_events", "#past_events", "#my_events", "#i_am_invited_to", "#future_events", "#user_reg", "#welcome_page", "#contact_us", "#about_us"];
 
         pages.forEach(function(p){
             $(p).append(registry_header, registry_footer);
@@ -159,7 +159,7 @@ try {
               <div data-role="navbar">
                      <ul>
                          <li><a href="#help_page">Help</a></li>
-                         <li><a href="#past_events">Contact Us</a></li>
+                         <li><a href="#contact_us">Contact Us</a></li>
                          <li><a href="#future_events">About Us</a></li>
                      </ul>
               </div><!-- End navbar -->
@@ -447,13 +447,64 @@ try {
           
             <div data-role="fieldcontain">
               <h3 name="" id="textarea4" placeholder="">
-                Welcome to Gift-Registry.  This app will make sure, that for your event, you get only those gifts that you want!
+                Welcome to Gift-Registry.  This app will make sure, that for your event, you get only those gifts that you want! <br> <br>
+
+                User manual bellow:
               </h3>
             </div>
         </div>
                 
       </div> 
     </div> <!-- end help page -->
+
+
+<!-- .................................................... contact us page .......................................... -->
+
+    <div data-role="page" id="contact_us">
+      <div data-role="content">
+        <div>
+          <img src="gift.gif" alt="image" style="width: 100px; hight: 100px; position: relative; margin-left: -16px; margin-top: -18px" />
+          
+            <div data-role="fieldcontain">
+              <h3 name="" id="textarea4" placeholder="">
+                To contact us please email to our customer support: <a href="mailto:support@gift-registry.com" >support@gift-registry.com</a> indicating your conceerns.<br><br>
+                Please allow 24 business hours to respond.
+              </h3>
+            </div>
+        </div>
+                
+      </div> 
+    </div> <!-- end contact us page -->
+
+
+
+
+
+<!-- .................................................... about us page .......................................... -->
+
+    <div data-role="page" id="about_us">
+      <div data-role="content">
+        <div>
+          <img src="gift.gif" alt="image" style="width: 100px; hight: 100px; position: relative; margin-left: -16px; margin-top: -18px" />
+          
+            <div data-role="fieldcontain">
+              <h3 name="" id="textarea4" placeholder="">
+                Project leaders: <br>
+                Kevin Whalen: Student @Kent State University<br>
+                Vidmantas Steponavicius: Student @Kent State University<br>
+                Kyle Meehan: Student @Kent State University<br>
+              </h3>
+            </div>
+        </div>
+                
+      </div> 
+    </div> <!-- end about us page -->
+
+
+
+
+
+
 
     </body>
 
