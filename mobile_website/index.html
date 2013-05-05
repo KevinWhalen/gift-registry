@@ -17,20 +17,6 @@
         <title>
 			Universal Gift Registry
         </title>
-<<<<<<< HEAD
-        <link rel="stylesheet" href="https://s3.amazonaws.com/codiqa-cdn/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-        <link rel="stylesheet" href="my.css" />
-        <script src="https://s3.amazonaws.com/codiqa-cdn/jquery-1.7.2.min.js">
-        </script>
-        <script src="https://s3.amazonaws.com/codiqa-cdn/mobile/1.2.0/jquery.mobile-1.2.0.min.js">
-        </script>
-        <script src="my.js">
-        </script>
-        <!-- User-generated css -->
-        <style>
-        </style>
-        <!-- User-generated js -->
-=======
         <link rel="stylesheet" href="styles/jquery.mobile-1.3.1.min.css" />
         <link rel="stylesheet" href="styles/jquery.mobile.structure-1.3.1.css" />
         <link rel="stylesheet" href="styles/jquery.mobile.theme-1.3.1.css" />
@@ -38,12 +24,51 @@
         <script src="scripts/jquery-1.9.1.min.js"></script>
         <script src="scripts/jquery.mobile-1.3.1.min.js"></script>
         <script src="custom.js"></script>
->>>>>>> 3b76a626757ebd7fd74989938dde6c33db455e03
 
         <script>
 try {
 
-    $(function() {
+    $(document).ready(function(){
+
+        var registry_header = '<div class="reg_header">\
+        <!-- Header link to go to main page  -->\
+          <div data-id="registry_header">\
+            <a href="#welcome_page" >\
+                <div data-theme="a" data-role="header" data-position="fixed" >\
+                    <h3>\
+                        Gift-Registry\
+                    </h3>\
+                </div>\
+            </a>\
+          </div>\
+        </div>';
+
+        //<a href="#welcome_page" class="ui-btn-active ui-state-persist">\
+
+        var registry_footer = '<div class="reg_footer">\
+            <!-- Page  footer-->\
+            <div data-id="registry_footer" data-theme="a" data-role="footer" data-position="fixed">\
+               <!-- <div data-role="footer">     -->\
+                   <div data-role="navbar">\
+                     <ul>\
+                         <li><a href="#help_page">Help</a></li>\
+                         <li><a href="#past_events">Contact Us</a></li>\
+                         <li><a href="#future_events">About Us</a></li>\
+                     </ul>\
+                   </div><!-- End navbar -->\
+               </div><!-- End page footer -->\
+            </div>';
+
+
+        // Add headers and footers to pages
+        var pages=["#help_page", "#future_events", "#past_events", "#my_events", "#i_am_invited_to", "#future_events", "#user_reg", "#welcome_page"];
+
+        pages.forEach(function(p){
+            $(p).append(registry_header, registry_footer);
+        });
+
+
+
 
     });
 
@@ -57,24 +82,23 @@ try {
 
     <body>
 
-
-        <!-- welcome page -->
+<!-- ..............................................welcome page.................................... -->
         <div data-role="page" id="welcome_page">
            
 
 
+<!-- ///////////////////why THESE DO NOT WORK FOR FIRST LOADING PAGE???????????/////////-->        
         <!-- Header link to go to main page  -->
           <div data-id="registry_header">
             <a href="#welcome_page" class="ui-btn-active ui-state-persist">
-                <div data-theme="a" data-role="header">
+                <div data-theme="a" data-role="header" data-position="fixed">
                     <h3>
                         Gift-Registry
                     </h3>
                 </div>
             </a>
-          </div
->            <!-- End of Header link to go to main page -->
-    
+          </div>            <!-- End of Header link to go to main page -->
+    <!-- ////////////////////////////////////////////////////////////////-->
 
             <div data-role="content">
                 <div>
@@ -93,6 +117,7 @@ try {
   <!-- Log in part of page -->
 
         <div data-role="content">
+          <div>
             <div data-role="fieldcontain">
                 <label for="textinput3">
                         User Name
@@ -107,102 +132,240 @@ try {
                     <input name="" id="textinput4" placeholder="" value="" type="text" />
             </div>
      
+     
+            <a data-role="button" href="#my_events">
+                    LogIn_temp
+                </a>
+
             <input type="submit" value="LogIn" />
-            <div data-role="fieldcontain">
-                    
-                <h1 style="text-align:center;">OR</h1>
-                    
+
+            <!-- Here we need script to validate username and passsword???????????????????????/ -->
+
+            <div data-role="fieldcontain"> 
+               <h1 style="text-align:center;">OR</h1>
             </div>
     
-            <a data-role="button" href="#page1">
+            <a data-role="button" href="#user_reg">
                     New User
                 </a>
    
+
+
+<!-- ///////////////////why THESE DO NOT WORK FOR FIRST LOADING PAGE???????????/////////-->             
             <!-- Page  footer-->
 
             <div data-id="registry_footer" data-theme="a" data-role="footer" data-position="fixed">
-
-
               <!-- <div data-role="footer">     -->
-                   <div data-role="navbar">
+              <div data-role="navbar">
                      <ul>
-                         <li><a href="#my_events">Help</a></li>
+                         <li><a href="#help_page">Help</a></li>
                          <li><a href="#past_events">Contact Us</a></li>
-                         <li><a href="about_us.html.">About Us</a></li>
+                         <li><a href="#future_events">About Us</a></li>
                      </ul>
-                   </div><!-- End navbar -->
-               </div><!-- End page footer -->
-            </div>
+              </div><!-- End navbar -->
+            </div><!-- End page footer -->
+<!-- ////////////////////////////////////////////////////////////////-->
 
 
+          </div><!--End of content in log in part -->
         </div> <!-- End of Log in part of page -->
+
 </div> <!-- welcome page -->
 
 
-<!-- my events list page -->
+
+
+ <!-- ............................User registration form................................ -->
+        <div data-role="page" id="user_reg">
+            
+            <div data-role="content">
+              <div>
+                <form action="">
+                    <h2>
+                        User registration form:
+                    </h2>
+                    <div data-role="fieldcontain">
+                        <label for="textinput13">
+                            First Name:
+                        </label>
+                        <input name="" id="textinput13" placeholder="Enter your first name" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput14">
+                            Middle Name:
+                        </label>
+                        <input name="" id="textinput14" placeholder="Enter your middle name" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput16">
+                            Last Name:
+                        </label>
+                        <input name="" id="textinput16" placeholder="Enter your last name" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput17">
+                            Date Of Birth:
+                        </label>
+                        <input name="" id="textinput17" placeholder="Enter your birth day" value="" type="text" />
+                    </div>
+                    <h4>
+                        Address information:
+                    </h4>
+                    <div data-role="fieldcontain">
+                        <label for="selectmenu1">
+                            Choose Location:
+                        </label>
+                        <select id="selectmenu1" name="">
+                            <option value="option1">
+                                Home
+                            </option>
+                            <option value="value">
+                                Work
+                            </option>
+                            <option value="value">
+                                School
+                            </option>
+                            <option value="value">
+                                other
+                            </option>
+                        </select>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput18">
+                            Sreet number:
+                        </label>
+                        <input name="" id="textinput18" placeholder="Enter street number" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput19">
+                            Street name:
+                        </label>
+                        <input name="" id="textinput19" placeholder="Enter street name" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput20">
+                            Street extension
+                        </label>
+                        <input name="" id="textinput20" placeholder="Enter Floor/Apt./Unit/" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput25">
+                            City
+                        </label>
+                        <input name="" id="textinput25" placeholder="Enter your city name" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput26">
+                            State
+                        </label>
+                        <input name="" id="textinput26" placeholder="Enter you state" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput27">
+                            Zip code
+                        </label>
+                        <input name="" id="textinput27" placeholder="Enter your zip code" value="" type="text" />
+                    </div>
+                    <h4>
+                        User information
+                    </h4>
+                    <div data-role="fieldcontain">
+                        <label for="textinput21">
+                            User name
+                        </label>
+                        <input name="" id="textinput21" placeholder="User name" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput23">
+                            Password
+                        </label>
+                        <input name="" id="textinput23" placeholder="Enter your password" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput24">
+                            Repeat Password
+                        </label>
+                        <input name="" id="textinput24" placeholder="Renter your password" value="" type="text" />
+                    </div>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+          </div>  
+ 
+
+
+        </div><!-- end User registration form -->
+   
+
+
+
+
+<!-- .........................................my events list page.............................. -->
     
 
         <div data-role="page" id="my_events">
-            
-          <!-- Header link to go to main page  -->
-          <div data-id="registry_header">
-            <a href="index.html" class="ui-btn-active ui-state-persist">
-                <div data-theme="a" data-role="header" data-position="fixed" >
-                    <h3>
-                        Gift-Registry
-                    </h3>
-                </div>
-            </a>
-          </div>
-          <!-- End of Header link to go to main page -->
-
+         
             <div data-role="content">
-                <a data-role="button" href="#page1">
+                <a data-role="button" href="#future_events">
                     Future events
                 </a>
-                <a data-role="button" href="#page1">    
+                <a data-role="button" href="#i_am_invited_to">    
                     Events I am invited to
                 </a>
-                <a data-role="button" href="#page1">
+                <a data-role="button" href="#past_events">
                     Past events
                 </a>
                 <a data-role="button" href="#page1">
                     Create a new event
                 </a>
             </div>
-
-            <div data-id="registry_footer" data-theme="a" data-role="footer" data-position="fixed">
-                <!-- <div data-role="footer">     -->
-                <div data-role="navbar">
-                     <ul>
-                         <li><a href="#my_events">Help</a></li>
-                         <li><a href="#past_events">Contact Us</a></li>
-                         <li><a href="about_us.html.">About Us</a></li>
-                     </ul>
-                </div><!-- End navbar -->
-              </div><!-- End page footer -->
-        </div>>
           
         </div><!-- End of my events list page -->
 
 
-
-
-<!-- past events -->
+<!-- ....................................................past events................................. -->
 
     <div data-role="page" id="past_events">
    
-          <!-- Header link to go to main page  -->
-          <div data-id="registry_header">
-            <a href="index.html" class="ui-btn-active ui-state-persist">
-                <div data-theme="a" data-role="header" data-position="fixed" >
-                    <h3>
-                        Gift-Registry
-                    </h3>
-                </div>
+          
+           <a data-role="button" href="#my_events" data-icon="back" data-iconpos="left">
+                Back To Events
             </a>
-          </div>
-          <!-- End of Header link to go to main page -->
+          
+            <div data-role="content">
+                <h2>
+                    My past events
+                </h2>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            Event_Name_Date
+                        </h3>
+                        <form action="">
+                            <h2>
+                                Location
+                            </h2>
+                            <a data-role="button" href="#page1">
+                                Wish list
+                            </a>
+                            <a data-role="button" href="#page1">
+                                Guests list
+                            </a>
+                            <a data-role="button" href="#page1" data-icon="delete" data-iconpos="left">
+                                Delete event
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+         
+        </div><!-- End past events -->
+
+
+<!-- .............................................future events......................................... -->
+
+    <div data-role="page" id="future_events">
+   
 
            <a data-role="button" href="#my_events" data-icon="back" data-iconpos="left">
                 Back To Events
@@ -234,40 +397,65 @@ try {
                     </div>
                 </div>
             </div>
+        </div><!-- End future events -->
 
-            <div data-id="registry_footer" data-theme="a" data-role="footer" data-position="fixed">
+
+<!-- .........................................i_am_invited_to page..................................... -->
+
+        <div data-role="page" id="i_am_invited_to">
 
 
-              <!-- <div data-role="footer">     -->
-                   <div data-role="navbar">
-                     <ul>
-                         <li><a href="#my_events">Help</a></li>
-                         <li><a href="#past_events">Contact Us</a></li>
-                         <li><a href="about_us.html.">About Us</a></li>
-                     </ul>
-                   </div><!-- End navbar -->
-               </div>
-            </div><!-- End page footer -->
+           <a data-role="button" href="#my_events" data-icon="back" data-iconpos="left">
+                Back To Events
+            </a>
+          
+
+            <div data-role="content">
+                <h2>
+                    Events I am Invited to
+                </h2>
+                <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            Event_Name_Date
+                        </h3>
+                        <form action="">
+                            <h2>
+                                Location
+                            </h2>
+                            <a data-role="button" href="#page1">
+                                Wish list
+                            </a>
+                            <a data-role="button" href="#page1">
+                                Guests list
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+           
          
-        </div><!-- End past events -->
+        </div><!-- End of i_am_invited_to events -->
 
+<!-- .......................................................... help page .............................................-->
 
-
-
-
-
-
+    <div data-role="page" id="help_page">
+      <div data-role="content">
+        <div>
+          <img src="gift.gif" alt="image" style="width: 100px; hight: 100px; position: relative; margin-left: -16px; margin-top: -18px" />
+          
+            <div data-role="fieldcontain">
+              <h3 name="" id="textarea4" placeholder="">
+                Welcome to Gift-Registry.  This app will make sure, that for your event, you get only those gifts that you want!
+              </h3>
+            </div>
+        </div>
+                
+      </div> 
+    </div> <!-- end help page -->
 
     </body>
 
-<<<<<<< HEAD
-    <script>
-
-    $(document).on('pageinit', function(event){
-  $("#footerDiv").load('_footer.html', function(){$(this).trigger("create")});
-});
-    </script>
-=======
->>>>>>> 3b76a626757ebd7fd74989938dde6c33db455e03
 </html>
 
