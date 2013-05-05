@@ -61,7 +61,7 @@ try {
 
 
         // Add headers and footers to pages
-        var pages=["#help_page", "#future_events", "#past_events", "#my_events", "#i_am_invited_to", "#future_events", "#user_reg", "#welcome_page", "#contact_us", "#about_us"];
+        var pages=["#help_page", "#future_events", "#past_events", "#my_events", "#i_am_invited_to", "#future_events", "#user_reg", "#welcome_page", "#contact_us", "#about_us", "#create_event", "#wish_list", "#guests_list"];
 
         pages.forEach(function(p){
             $(p).append(registry_header, registry_footer);
@@ -81,7 +81,6 @@ try {
     </head>
 
     <body>
-
 <!-- ..............................................welcome page.................................... -->
         <div data-role="page" id="welcome_page">
            
@@ -160,7 +159,7 @@ try {
                      <ul>
                          <li><a href="#help_page">Help</a></li>
                          <li><a href="#contact_us">Contact Us</a></li>
-                         <li><a href="#future_events">About Us</a></li>
+                         <li><a href="#about_us">About Us</a></li>
                      </ul>
               </div><!-- End navbar -->
             </div><!-- End page footer -->
@@ -171,6 +170,245 @@ try {
         </div> <!-- End of Log in part of page -->
 
 </div> <!-- welcome page -->
+
+
+
+
+
+<!-- .................................................... guests list................................. -->
+
+    <div data-role="page" id="guests_list">
+       
+        <a data-role="button" data-rel="back" data-icon="back" data-iconpos="left">
+            Back
+        </a>
+        <div data-role="content">
+            <h2>
+                Guests list for:
+            </h2>
+             
+            <!-- event info here receiver, name, location, date -->
+            <div class="event">
+                <h3>There is no event information</h3>
+            </div>
+
+            <div class="gift_list">
+                <h3>There will be no guests in this event</h3>
+            </div>
+
+ <!-- IF DATE IS IN FUTURE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+            <!-- if GIVER is wiewing -->
+            <a data-role="button" href="">
+                I will be there too!(Receiver)
+            </a>
+
+            <!-- if RECEIVER is wiewing his future event let add more people to the event -->
+
+            <div data-role="collapsible-set">
+                <div data-role="collapsible" data-collapsed="true">
+                    <h1>Invite more people(Giver)</h1>
+                    <div>
+                        <div data-role="fieldcontain" style='margin:20px; position:relative'>
+                            <label for="textinput23">
+                                Guests email address:
+                            </label>
+                            <input name="" id="textinput23" placeholder="Enter Guests email address" value="" type="text" />
+                            <h3 style="text-align:center;">OR</h3>
+                    
+                            <label for="textinput24">
+                                Guests Gifr-Registry user name:
+                            </label>
+                            <input name="" id="textinput24" placeholder="Enter guests Gifr-Registry user name" value="" type="text" />
+        
+                            <div data-role="controlgroup" data-type="horizontal" style="text-align:right;">
+                                <input type="submit" value="Add" />
+                            </div>
+                        </div>            
+                    </div>
+                </div>
+            </div>
+ <!-- end IF DATE IS IN FUTURE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+        </div>  <!-- ned content -->     
+    </div><!-- End of guests list -->
+
+
+
+
+<!-- .................................................... wish list................................. -->
+
+    <div data-role="page" id="wish_list">
+   
+          
+           <a data-role="button" data-rel="back" data-icon="back" data-iconpos="left">
+                Back
+            </a>
+          
+            <div data-role="content">
+                <h2>
+                    Wish list for:
+                </h2>
+                
+                <!-- event info here receiver, name, location, date -->
+                <div class="event">
+                    <h3>There is no event information</h3>
+                </div>
+
+                 <div class="gift_list">
+                    <h3>There will be no gift giving</h3>
+                </div>
+<!-- IF DATE IS IN FUTURE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+        <!-- if RECEIVER is wiewing -->
+                <a data-role="button" href="">
+                    Submit changes(Receiver)
+                </a>
+                <h3>Add more items</h3>
+                <a data-role="button" href="#scan_upc">
+                        Scan item
+                </a>
+        <!-- if RECEIVER is wiewing -->
+                <!-- if GIVER is wiewing -->
+                <a data-role="button" href="">
+                    Submit changes(Giver)
+                </a>
+ <!-- IF DATE IS IN FUTURE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+
+            </div>
+         
+        </div><!-- End of wish list -->
+
+
+
+
+
+<!-- ......................................... create new event page..................................... -->
+
+        <div data-role="page" id="create_event">
+
+
+           <a data-role="button" href="#my_events" data-icon="back" data-iconpos="left">
+                Back To Events
+            </a>
+          
+            <div data-role="content">
+              <div>
+                <form action="">
+                    
+                    <h4>
+                        Address information:
+                    </h4>
+                    <div data-role="fieldcontain">
+                        <label for="selectmenu1">
+                            Name Location:
+                        </label>
+                        <select id="selectmenu1" name="">
+                            <option value="option1">
+                                Home
+                            </option>
+                            <option value="value">
+                                Work
+                            </option>
+                            <option value="value">
+                                School
+                            </option>
+                            <option value="value">
+                                Other
+                            </option>
+                        </select>
+                    </div>
+
+                    
+                    <div data-role="fieldcontain">
+                        <label for="textinput18">
+                            Sreet number:
+                        </label>
+                        <input name="" id="textinput18" placeholder="Enter street number" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                    
+                        <label for="textinput19">
+                            Street name:
+                        </label>
+                        <input name="" id="textinput19" placeholder="Enter street name" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput20">
+                            Street extension
+                        </label>
+                        <input name="" id="textinput20" placeholder="Enter Floor/Apt./Unit/" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput25">
+                            City
+                        </label>
+                        <input name="" id="textinput25" placeholder="Enter your city name" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput26">
+                            State
+                        </label>
+                        <input name="" id="textinput26" placeholder="Enter you state" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput27">
+                            Zip code
+                        </label>
+                        <input name="" id="textinput27" placeholder="Enter your zip code" value="" type="text" />
+                    </div>
+
+
+                    <h4>
+                        List of guests to invite:
+                    </h4>
+                    <div data-role="fieldcontain">
+                        <label for="textinput21">
+                            Guest first name:
+                        </label>
+                        <input name="" id="textinput21" placeholder="Enter guests first name" value="" type="text" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput22">
+                            Guest last name:
+                        </label>
+                        <input name="" id="textinput22" placeholder="Enter guests last name" value="" type="text" />
+                    </div>
+
+                <div>
+                    <div data-role="fieldcontain" style='margin:20px; position:relative'>
+                        <label for="textinput23">
+                            Guests email address:
+                        </label>
+                        <input name="" id="textinput23" placeholder="Enter Guests email address" value="" type="text" />
+                        <h3 style="text-align:center;">OR</h3>
+                    
+                       <label for="textinput24">
+                            Guests Gifr-Registry user name:
+                        </label>
+                        <input name="" id="textinput24" placeholder="Enter guests Gifr-Registry user name" value="" type="text" />
+        
+                    <div data-role="controlgroup" data-type="horizontal" style="text-align:right;">
+                        <input type="submit" value="Add" />
+                    </div>
+
+                    </div>
+            
+                </div>
+
+                <a data-role="button" href="#scan_upc">
+                        Scan item
+                </a>
+                    <input type="submit" value="Crate this event!" />
+                </form>
+            </div>
+          </div>  
+
+
+           <a data-role="button" href="#my_events" data-icon="back" data-iconpos="left">
+                Back To Events
+            </a>
+          
+        </div><!-- End of create event events -->
 
 
 
@@ -226,7 +464,7 @@ try {
                                 School
                             </option>
                             <option value="value">
-                                other
+                                Other
                             </option>
                         </select>
                     </div>
@@ -315,7 +553,7 @@ try {
                 <a data-role="button" href="#past_events">
                     Past events
                 </a>
-                <a data-role="button" href="#page1">
+                <a data-role="button" href="#create_event">
                     Create a new event
                 </a>
             </div>
@@ -345,10 +583,10 @@ try {
                             <h2>
                                 Location
                             </h2>
-                            <a data-role="button" href="#page1">
+                            <a data-role="button" href="#wish_list">
                                 Wish list
                             </a>
-                            <a data-role="button" href="#page1">
+                            <a data-role="button" href="#guests_list">
                                 Guests list
                             </a>
                             <a data-role="button" href="#page1" data-icon="delete" data-iconpos="left">
@@ -376,7 +614,7 @@ try {
                     My future events
                 </h2>
                 <div data-role="collapsible-set">
-                    <div data-role="collapsible" data-collapsed="false">
+                    <div data-role="collapsible" data-collapsed="true">
                         <h3>
                             Event_Name_Date
                         </h3>
@@ -384,10 +622,10 @@ try {
                             <h2>
                                 Location
                             </h2>
-                            <a data-role="button" href="#page1">
+                            <a data-role="button" href="#wish_list">
                                 Wish list
                             </a>
-                            <a data-role="button" href="#page1">
+                            <a data-role="button" href="#guests_list">
                                 Guests list
                             </a>
                             <a data-role="button" href="#page1" data-icon="delete" data-iconpos="left">
@@ -421,12 +659,13 @@ try {
                         </h3>
                         <form action="">
                             <h2>
-                                Location
+                                Location information here!!!!...........<br>
+                                .............................................................   
                             </h2>
-                            <a data-role="button" href="#page1">
+                            <a data-role="button" href="#wish_list">
                                 Wish list
                             </a>
-                            <a data-role="button" href="#page1">
+                            <a data-role="button" href="#guests_list">
                                 Guests list
                             </a>
                         </form>
