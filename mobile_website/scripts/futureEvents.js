@@ -46,7 +46,7 @@ $("#my_future_button").click(function(){
 			type: "POST",
 			url: "scripts/futureQuery.php",
 			dataType: "json",
-			data: {"User_ID": User_ID},
+			data: {"User_ID": User_ID}
 		})
 		.done(function(futureEvents){ 
 			futureEvents.forEach(function(e){
