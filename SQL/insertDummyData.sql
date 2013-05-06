@@ -25,7 +25,11 @@ insert into Guests_List (`Giver_ID`, `Receiver_ID`, `Event_ID`, `Coming`, `Gifti
 insert into Events (`User_ID`, `Event_Name`,     `Event_Date`, `Location_ID`) 
 			values (1,         'Bills Birthday', '2013-05-21', 1);
 insert into Events (`User_ID`, `Event_Name`,     `Event_Date`, `Location_ID`) 
-			values (2,  	   'Bill Birthday',  '2013-04-23', 2);
+			values (2,  	   'Lavernes Birthday',  '2013-04-23', 2);
+insert into Events (`User_ID`, `Event_Name`,     `Event_Date`, `Location_ID`) 
+			values (1,         'Bills Birthday', '2014-05-21', 1);
+insert into Events (`User_ID`, `Event_Name`,     `Event_Date`, `Location_ID`) 
+			values (2,  	   'Baby Shower',  '2014-06-18', 2);
 
 
 insert into Gift (`Item_ID`, `Event_ID`, `Giver_ID`, `Price`, `Quantity`) 
