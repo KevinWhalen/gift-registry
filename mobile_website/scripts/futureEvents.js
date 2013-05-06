@@ -3,9 +3,9 @@ function addToFutureDisplay(e)
 	$("#my_future").append('\
 		<div data-role="collapsible-set">\
 			<div data-role="collapsible" data-collapsed="true">\
-				<h3>'+e.name+' | '+e.date+'</h3>\
+				<h3>'+e.Event_Name+' | '+e.Event_Date+'</h3>\
 				<form action="">\
-					<h2>'+e.loc+'</h2>\
+					<h2>'+e.Location_Name+'</h2>\
 					<a data-role="button" href="#wish_list">Wish list</a>\
 					<a data-role="button" href="#guests_list">Guests list</a>\
 					<a data-role="button" href="#page1" data-icon="delete" data-iconpos="left">Delete event</a>\

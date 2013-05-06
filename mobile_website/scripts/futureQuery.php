@@ -6,11 +6,11 @@ require 'MySQLcreditials.php';
 
 // parameters
 if($_POST['User_ID']){
-	$upc = $_POST['User_ID'];
+	$user = $_POST['User_ID'];
 } else if($_GET['User_ID']){
-	$upc = $_GET['User_ID'];
+	$user = $_GET['User_ID'];
 } else {
-	//$upc = "000000000000";
+	$user = 1;
 	echo 'url error';
 //	echo '{"Item_ID":"", "Department":"", "Title":"", "Classification":"", "Price":""}';
 	die();
@@ -26,13 +26,15 @@ try {
 		"$dbuser", "$dbpass");
 
 	// query
-	$sql = "SELECT Item_ID, Department, Title, Classification, Price 
-			FROM Item 
-			WHERE Item_ID = :id";
+	//$today = date("Y-m-d"); //MySQL format
+	$sql = "SELECT Event_Name, Location_Name, Event_Date
+			FROM Events JOIN Address ON (Events.Location_ID = Address.Location_ID)
+			WHERE DATE(NOW()) < Event_Date";
 
 	// statement handle
-$sth = $dbh->prepare($sql, Array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-	$sth->execute(Array(':id' => $upc));
+	$sth = $dbh->prepare($sql, Array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+	//$sth->execute(Array(':today' => $today));
+	$sth->execute();
 	$row = $sth->fetch(PDO::FETCH_ASSOC);
 
 	// return result
@@ -40,29 +42,7 @@ $sth = $dbh->prepare($sql, Array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 		$rowNoNulls = str_replace('null','""',$row);
 		echo json_encode($rowNoNulls);
 	} else {
-	// search external database and pull into local cache table.
-		$arguement = escapeshellarg($upc);
-		exec("php lookupItem.php $arguement", $output, $returnCode);
-
-		if ($returnCode == 0){
-			$out = preg_replace('/description/','desc',$output[0],1);
-			$entry = json_decode($out);
-			$u = escapeshellarg($entry->upc);
-		//	$d = escapeshellarg($entry->{'description'});
-			$d = escapeshellarg($entry->desc);
-			$s = escapeshellarg($entry->size);
-			exec("php addItem.php ".$u." ".$d." ".$s, $output2, $returnCode2);
-
-			if ($returnCode2 == 0){
-				echo '{"Item_ID":"'.$entry->upc.'", ',
-					'"Department":"", ',
-				//	'"Title":"'.$entry->{'description'}.'", ',
-					'"Title":"'.$entry->desc.'", ',
-					'"Classification":"'.$entry->size.'", ',
-					'"Price":""',
-					'}' . PHP_EOL;
-			}
-		}
+		echo "no result";
 	}
 
 	// close connection
