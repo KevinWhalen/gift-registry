@@ -48,15 +48,15 @@ insert into Item (`Item_ID`, `Department`,  `Title`,     `Classification`)
 		  values ('4',       'Groceries',   'Chocolate', 'Milk');
 
 
-insert into Contact_Info (`User_ID`, `Location_ID`,  `Phone-Num`,    `Email`)
+insert into Contact_Info (`User_ID`, `Location_ID`,  `Phone_Num`,    `Email`)
                   values (1,         1,              '440-568-9124', 'bill10@cox.net');
-insert into Contact_Info (`User_ID`, `Location_ID`,  `Phone-Num`,    `Email`) 
+insert into Contact_Info (`User_ID`, `Location_ID`,  `Phone_Num`,    `Email`) 
 	              values (2,         2,              '440-569-8742', 'laverne@cox.net');
-insert into Contact_Info (`User_ID`, `Location_ID`,  `Phone-Num`,    `Email`) 
+insert into Contact_Info (`User_ID`, `Location_ID`,  `Phone_Num`,    `Email`) 
 	              values (3,         3,              '440-578-9612', 'hi1234@yahoo.com');
-insert into Contact_Info (`User_ID`, `Location_ID`,  `Phone-Num`,    `Email`) 
+insert into Contact_Info (`User_ID`, `Location_ID`,  `Phone_Num`,    `Email`) 
 	              values (4,         4,              '216-852-9461', 'ti@cox.net');
-insert into Contact_Info (`User_ID`, `Location_ID`,  `Phone-Num`,    `Email`) 
+insert into Contact_Info (`User_ID`, `Location_ID`,  `Phone_Num`,    `Email`) 
 	              values (5,         5,              '216-963-4561', 'Imlovingit@yahoo.com');
 
 
