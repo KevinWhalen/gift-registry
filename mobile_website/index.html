@@ -24,6 +24,7 @@
         <script src="scripts/jquery-1.9.1.min.js"></script>
         <script src="scripts/jquery.mobile-1.3.1.min.js"></script>
         <script src="custom.js"></script>
+        <script src="scripts/futureEvents.js"></script>
 
         <script>
 try {
@@ -544,7 +545,7 @@ try {
         <div data-role="page" id="my_events">
          
             <div data-role="content">
-                <a data-role="button" href="#future_events">
+                <a id="my_future_button" data-role="button" href="#future_events">
                     Future events
                 </a>
                 <a data-role="button" href="#i_am_invited_to">    
@@ -609,7 +610,7 @@ try {
                 Back To Events
             </a>
           
-            <div data-role="content">
+            <div id="my_future" data-role="content">
                 <h2>
                     My future events
                 </h2>
