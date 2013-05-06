@@ -1,4 +1,7 @@
-insert into Person ('User_ID','User_Name','User_Password','F_Name','L_Name', 'M_Name', 'DOB') values (00001, 'Bill5', 'password', 'Bill', 'Evan', 'Smith', '1985-04-21');
+insert into Person 
+	('User_Name','User_Password','F_Name','L_Name', 'M_Name', 'DOB') 
+	values 
+	('Bill5', 'password', 'Bill', 'Evan', 'Smith', '1985-04-21');
 insert into Person ('User_ID','User_Name','User_Password','F_Name','L_Name', 'M_Name', 'DOB') values (00002, 'L', 'password1', 'Laverne', 'Anny', 'Smith', '1977-09-23');
 insert into Person ('User_ID','User_Name','User_Password','F_Name','L_Name', 'M_Name', 'DOB') values (00003, 'N', 'password1', 'Nick', 'Kevin', 'Smith', '1978-08-15');
 insert into Person ('User_ID','User_Name','User_Password','F_Name','L_Name', 'M_Name', 'DOB') values (00004, 'Ti3', 'password1', 'Tim', 'Eric', 'Smith', '1986-05-05');
