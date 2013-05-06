@@ -13,7 +13,7 @@ insert into Person (`User_Name`, `User_Password`, `F_Name`,  `L_Name`, `M_Name`,
 
 
 insert into Guests_List (`Giver_ID`, `Receiver_ID`, `Event_ID`, `Coming`, `Gifting`) 
-	             values (3           1,             1,          1,        1);
+	             values (3,          1,             1,          1,        1);
 insert into Guests_List (`Giver_ID`, `Receiver_ID`, `Event_ID`, `Coming`, `Gifting`) 
 	             values (2,          1,             1,          1,        1);
 insert into Guests_List (`Giver_ID`, `Receiver_ID`, `Event_ID`, `Coming`, `Gifting`) 
