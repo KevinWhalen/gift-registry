@@ -12,33 +12,12 @@ function addToFutureDisplay(e)
 				</form>\
 			</div>\
 		</div>\
-	');
+	').trigger("create");
 }
 
 $(document).ready(function(){
 
-//$("#my_future_button").click(function(){console.log("click");});
 $("#my_future_button").click(function(){
-/*
-	var futureEvents = 
-			[
-				{
-					"name": "Birthday",
-					"date": "07-16-2013",
-					"loc": "My House - full address from database"
-				},
-				{
-					"name": "Kick ass party",
-					"date": "05-11-2013",
-					"loc": "Kyle's House"
-				},
-				{
-					"name": "Baby Shower",
-					"date": "05-12-2013",
-					"loc": "Library"
-				}
-			];
-*/
 
 	var User_ID = 1;
 
