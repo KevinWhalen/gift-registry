@@ -1,5 +1,6 @@
 function addToFutureDisplay(e)
 {
+	$("#my_future").empty();
 	$("#my_future").append('\
 		<div data-role="collapsible-set">\
 			<div data-role="collapsible" data-collapsed="true">\
