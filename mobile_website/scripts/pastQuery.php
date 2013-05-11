@@ -29,7 +29,7 @@ try {
 
 	// query
 	//$today = date("Y-m-d"); //MySQL format
-	$sql = "SELECT Event_Name, Location_Name, Event_Date
+	$sql = "SELECT Event_Name, Location_Name,City, Street_Number, Street_Name, Street_Ext, State, Event_Date
 			FROM Events JOIN Address ON (Events.Location_ID = Address.Location_ID)
 			WHERE DATE(NOW()) > Event_Date
 				AND Events.User_ID = :user";
