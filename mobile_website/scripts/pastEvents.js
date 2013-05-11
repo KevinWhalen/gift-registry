@@ -1,7 +1,7 @@
-function addToFutureDisplay(e)
+function addToPastDisplay(e)
 {
 
-	$("#my_future").append('\
+	$("#my_past").append('\
 		<div data-role="collapsible-set">\
 			<div data-role="collapsible" data-collapsed="true">\
 				<h3>'+e.Event_Name+' | '+e.Event_Date+'</h3>\
@@ -18,21 +18,21 @@ function addToFutureDisplay(e)
 
 $(document).ready(function(){
 
-$("#my_future_button").click(function(){
+$("#my_past_button").click(function(){
 
-	var User_ID = 1;
+	var User_ID = 2;
 
 	$.ajax({
 			type: "POST",
-			url: "scripts/futureQuery.php",
+			url: "scripts/pastQuery.php",
 			dataType: "json",
 			data: {"User_ID": User_ID}
 		})
-		.done(function(futureEvents){ 
+		.done(function(pastEvents){ 
 
-			$("#my_future").empty();
-			futureEvents.forEach(function(e){
-				addToFutureDisplay(e);
+			$("#my_past").empty();
+			pastEvents.forEach(function(e){
+				addToPastDisplay(e);
 				console.log(e);
 			});
 		});

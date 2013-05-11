@@ -25,6 +25,8 @@
         <script src="scripts/jquery.mobile-1.3.1.min.js"></script>
         <script src="scripts/custom.js"></script>
         <script src="scripts/futureEvents.js"></script>
+        <script src="scripts/pastEvents.js"></script>
+        <script src="scripts/invitedToEvents.js"></script>
 
         <script>
 try {
@@ -389,7 +391,7 @@ try {
                         <input name="" id="textinput24" placeholder="Enter guests Gifr-Registry user name" value="" type="text" />
         
                     <div data-role="controlgroup" data-type="horizontal" style="text-align:right;">
-                        <input type="submit" value="Add" />
+                        <input type="submit" value="Add guest" />
                     </div>
 
                     </div>
@@ -548,10 +550,10 @@ try {
                 <a id="my_future_button" data-role="button" href="#future_events">
                     Future events
                 </a>
-                <a data-role="button" href="#i_am_invited_to">    
+                <a id="i_am_invited_button" data-role="button" href="#i_am_invited_to">    
                     Events I am invited to
                 </a>
-                <a data-role="button" href="#past_events">
+                <a id="my_past_button" data-role="button" href="#past_events">
                     Past events
                 </a>
                 <a data-role="button" href="#create_event">
@@ -571,7 +573,8 @@ try {
                 Back To Events
             </a>
           
-            <div data-role="content">
+            <div id="my_past" data-role="content">
+
                 <h2>
                     My past events
                 </h2>
@@ -649,7 +652,7 @@ try {
             </a>
           
 
-            <div data-role="content">
+            <div id="i_am_invited" data-role="content">
                 <h2>
                     Events I am Invited to
                 </h2>
